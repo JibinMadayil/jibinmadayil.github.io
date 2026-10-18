@@ -926,9 +926,12 @@ details.earlier { margin-top: 2rem; max-width: none; }
 details.earlier .work-list { margin-top: 8px; }
 
 .cert-list { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.cert { display: grid; gap: 6px; padding: 18px; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
+.cert { display: grid; grid-template-rows: 1fr auto; gap: 10px; padding: 18px; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; min-width: 0; }
 .cert-name { font-weight: 600; text-wrap: balance; }
 .cert-meta { display: flex; justify-content: space-between; gap: 12px; color: var(--ink-soft); font-size: var(--step--1); }
+.cert-verify { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.cert-verify:hover { text-decoration-thickness: 2px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 .article-meta { display: grid; gap: 2px; }
 .article-cat { font-size: var(--step--1); color: var(--accent); }
