@@ -170,13 +170,13 @@
       var value = btn.getAttribute("data-copy");
       var done = function () {
         btn.textContent = "Copied";
-        showToast("Email address copied");
+        showToast((btn.getAttribute("data-copy-label") || "Email address") + " copied");
         setTimeout(function () { btn.textContent = "Copy"; }, 2200);
       };
       if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(value).then(done, function () { showToast("Copy failed. Select the address instead."); });
+        navigator.clipboard.writeText(value).then(done, function () { showToast("Copy failed. Select the text instead."); });
       } else {
-        showToast("Copy isn't available here. Select the address instead.");
+        showToast("Copy isn't available here. Select the text instead.");
       }
     });
   });
