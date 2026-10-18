@@ -288,11 +288,17 @@
               <summary>View technical details</summary>
               <div class="tech-body">
                 <p class="tech-label">Business need</p>
-                <p>Automate bank statement processing and reconciliation for an organization that does not use Oracle Receivables, and keep the General Ledger running cleanly for the finance team.</p>
-                <p class="tech-label">Cash Management details</p>
+                <p>Automate bank statement processing and reconciliation for an organization that does not use Oracle Receivables, keep the General Ledger running cleanly for the finance team, and prepare for a second legal entity and planning in EPM.</p>
+                <p class="tech-label">Cash Management</p>
                 <ul>
-                  <li>Position-based parse rule sets, transaction creation rules suited to a setup with no Receivables, and grouped matching for card settlement batches.</li>
-                  <li>Statement of work for the second legal entity expansion.</li>
+                  <li>Position-based parse rule sets for the bank's BAI2 statements, after tracing parse failures to delimiter syntax in the rules.</li>
+                  <li>Transaction creation rules designed for a setup with no Receivables, so every unmatched credit is created as an external cash transaction.</li>
+                  <li>Many-to-one group matching that reconciles card settlement batches against a single bank deposit.</li>
+                  <li>Resolved bank statement upload failures and set the upload path through the Bank Statements work area.</li>
+                </ul>
+                <p class="tech-label">Expansion</p>
+                <ul>
+                  <li>Prepared the statement of work for bringing the foundation entity onto Payables, Purchasing and Cash Management.</li>
                 </ul>
                 <p class="tech-label">Status</p>
                 <p>Ongoing. The EPM implementation was won as a follow-on project.</p>
@@ -325,15 +331,24 @@
                 <p>Move budgeting into EPM Planning, control spending against approved budgets in ERP, and tighten journal entry controls.</p>
                 <p class="tech-label">General Ledger</p>
                 <ul>
-                  <li>Accounting calendar with fiscal year-end adjusting periods, chart of accounts validation across Department, Service and Natural Account segments.</li>
-                  <li>Multicurrency journals in entered and accounted currencies, foreign currency conversion and revaluation, AutoReverse and reversal criteria.</li>
-                  <li>Page customization specifications for mandatory journal descriptions and restricting AutoCopy on journals from subledgers, sent to the client for sign-off.</li>
+                  <li>Accounting calendar with fiscal year-end adjusting periods, and chart of accounts validation across Department, Service and Natural Account segments.</li>
+                  <li>Journal approval rules built in the ADFdi approval template, routing by role to Controllership and FP&amp;A leads.</li>
+                  <li>Cross-validation rules for profit and loss and department combinations, with balance sheet accounts restricted to a default cost center and the violations report used to find existing invalid combinations.</li>
+                  <li>Multicurrency journals, foreign currency revaluation, and a reversal criteria set driving AutoReverse.</li>
+                  <li>Year-end close using the income statement closing journals process.</li>
+                  <li>Specified Page Composer changes for mandatory journal descriptions and restricting AutoCopy on subledger journals, now with the client for sign-off.</li>
                 </ul>
-                <p class="tech-label">EPM Planning and integration</p>
+                <p class="tech-label">EPM Planning</p>
                 <ul>
-                  <li>BSO and ASO cubes, valid intersections, bidirectional data maps, forms and an indirect cash flow method.</li>
-                  <li>Investigated budget inquiry results that differed by user point of view in Budgetary Control.</li>
-                  <li>Building an expense forecast form to replace the finance team's Excel template.</li>
+                  <li>Financials and Projects built as peer cubes connected by bidirectional data maps, with point-of-view driven mapping and Smart Push versus Data Exchange chosen per flow.</li>
+                  <li>Indirect cash flow in Financials: BSO calculation design, delta logic, read-only forms and cash flow tagging in the Account dimension.</li>
+                  <li>Expense forecast form on custom accounts to replace the finance team's Excel forecast template, now in its first draft.</li>
+                </ul>
+                <p class="tech-label">Integration</p>
+                <ul>
+                  <li>Fixed a Projects to Financials data map that failed on an invalid member selection, and investigated sign convention anomalies and point-of-view differences in budget inquiry.</li>
+                  <li>Set up EPM Automate against the client's Oracle Cloud environment.</li>
+                  <li>Scoped Oracle Integration Cloud integrations for payroll journals into General Ledger through FBDI, and an employee sync from the HR system to drive approval routing and role-based access.</li>
                 </ul>
                 <p class="tech-label">Status</p>
                 <p>In progress.</p>
@@ -362,12 +377,21 @@
               <div class="tech-body">
                 <p class="tech-label">Business need</p>
                 <p>Dispatch replacement staff when employees are absent, following the district's staffing rules.</p>
-                <p class="tech-label">Design details</p>
+                <p class="tech-label">Configuration</p>
                 <ul>
-                  <li>Completed the fit-gap analysis and wrote solution design sections on dispatch, multi-assignment staff and the HCM to Field Service integration.</li>
-                  <li>Evaluated what standard Field Service scheduling could and could not do, and drafted pseudocode for an Oracle Integration Cloud approach to the gaps.</li>
-                  <li>Designed an approval flow for replacement requests across Field Service, CX Service and Oracle Integration Cloud.</li>
-                  <li>Worked with Oracle Support on the HCM to Field Service resource sync.</li>
+                  <li>Six resource types covering teaching, support and operations staff, with work shifts, work schedules, work zones, work skill groups and conditions, and holidays.</li>
+                  <li>Activity types with segmenting enabled so a replacement can be split into morning and afternoon assignments.</li>
+                  <li>Skills-based routing, including tracing activities that were routing to the wrong resource.</li>
+                </ul>
+                <p class="tech-label">Design</p>
+                <ul>
+                  <li>Completed the fit-gap analysis and wrote the solution design sections on replacement dispatch, multi-assignment and spare board employees, and the HCM, time and labour, payroll and Field Service integration architecture.</li>
+                  <li>Designed an approval step for replacement assignments before Oracle Integration Cloud pushes confirmed activities into Field Service, and drafted pseudocode for the gaps standard scheduling cannot cover.</li>
+                </ul>
+                <p class="tech-label">Integration</p>
+                <ul>
+                  <li>Diagnosed why resources were visible in the Dispatch Console but could not be scheduled: missing work schedules and inactive linked users, traced to an HCM to Field Service integration whose connections had never been fully configured.</li>
+                  <li>Worked through resources created as the wrong resource type, bucket placement issues and alphanumeric Canadian postal codes rejected by the sync, and raised the Oracle Support requests to resolve them.</li>
                 </ul>
                 <p class="tech-label">Status</p>
                 <p>Preparing for CRP 1. The integration and approval design is proposed and not in production.</p>
