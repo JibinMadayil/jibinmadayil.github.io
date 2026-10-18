@@ -867,9 +867,10 @@ p, li, dd, .work-desc, figcaption { text-wrap: pretty; }
 @media (prefers-reduced-motion: reduce) { .js .fx-tiles li { opacity: 1; transform: none; } }
 /* Portfolio v2: lifecycle, technical details, case studies, certifications, articles */
 .lifecycle-title { margin-top: 0; }
+.lifecycle-lede { margin: 0 0 1.25rem; color: var(--ink-soft); max-width: 62ch; }
 .lifecycle {
   list-style: none; margin: 0 0 2.75rem; padding: 0;
-  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;
   counter-reset: phase;
 }
 .lifecycle li {
