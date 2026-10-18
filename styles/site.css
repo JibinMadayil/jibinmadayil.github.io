@@ -870,7 +870,7 @@ p, li, dd, .work-desc, figcaption { text-wrap: pretty; }
 .lifecycle-lede { margin: 0 0 1.25rem; color: var(--ink-soft); max-width: 62ch; }
 .lifecycle {
   list-style: none; margin: 0 0 2.75rem; padding: 0;
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;
   counter-reset: phase;
 }
 .lifecycle li {
@@ -929,12 +929,10 @@ details.earlier .work-list { margin-top: 8px; }
 .article-body { display: grid; gap: 4px; }
 .article-desc { color: var(--ink-soft); font-size: 0.95rem; }
 
-@media (max-width: 1040px) { .lifecycle { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 760px) {
   .case-list, .cert-list { grid-template-columns: 1fr; }
-  .lifecycle { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lifecycle { grid-template-columns: 1fr; }
 }
-@media (max-width: 420px) { .lifecycle { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { details.tech[open] .tech-body { animation: none; } }
 @media print { details.tech > .tech-body { display: block; } }
 .hero-actions .btn { padding: 0 16px; }
