@@ -23,7 +23,7 @@
     root.classList.toggle("is-dark", dark);
     themeBtn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
     var meta = document.querySelectorAll('meta[name="theme-color"]');
-    meta.forEach(function (m) { m.setAttribute("content", dark ? "#0F191D" : "#F3F6F4"); });
+    meta.forEach(function (m) { m.setAttribute("content", dark ? "#100F0E" : "#312D2A"); });
   }
 
   themeBtn.addEventListener("click", function () {
@@ -180,6 +180,13 @@
       }
     });
   });
+
+  // Fusion-style greeting by the visitor's time of day
+  var greet = document.getElementById("fx-greeting");
+  if (greet) {
+    var hr = new Date().getHours();
+    greet.textContent = (hr < 12 ? "Good morning" : hr < 18 ? "Good afternoon" : "Good evening") + ", and welcome.";
+  }
 
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
