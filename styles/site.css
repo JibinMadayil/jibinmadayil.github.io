@@ -15,6 +15,8 @@
   --node-core: #17262E;
   --node-core-ink: #F3F6F4;
   --shadow: 0 1px 2px rgba(23, 38, 46, 0.06), 0 8px 24px rgba(23, 38, 46, 0.06);
+  /* Lines that carry meaning (diagram arrows, control borders): at least 3:1 on paper in every palette */
+  --edge: color-mix(in srgb, var(--ink-soft) 70%, var(--paper));
 
   --font-display: "Newsreader", Georgia, "Times New Roman", serif;
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -214,7 +216,7 @@ p { margin: 0 0 1rem; }
   height: 40px;
   display: inline-grid;
   place-items: center;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--edge);
   background: var(--surface);
   color: var(--ink);
   border-radius: 10px;
@@ -222,7 +224,7 @@ p { margin: 0 0 1rem; }
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .icon-btn:hover { border-color: var(--rule-strong); }
-.icon-btn:active { transform: scale(0.94); }
+.icon-btn:active { transform: scale(0.96); }
 .icon-btn svg {
   width: 20px;
   height: 20px;
@@ -234,8 +236,9 @@ p { margin: 0 0 1rem; }
 }
 
 .theme-toggle svg { transition: transform 0.5s var(--ease-out), opacity 0.3s ease; grid-area: 1 / 1; }
-.theme-toggle .icon-moon { opacity: 0; transform: rotate(-60deg) scale(0.6); }
-.is-dark .theme-toggle .icon-sun { opacity: 0; transform: rotate(60deg) scale(0.6); }
+.theme-toggle svg { transition-property: transform, opacity, filter; }
+.theme-toggle .icon-moon { opacity: 0; transform: rotate(-60deg) scale(0.6); filter: blur(2px); }
+.is-dark .theme-toggle .icon-sun { opacity: 0; transform: rotate(60deg) scale(0.6); filter: blur(2px); }
 .is-dark .theme-toggle .icon-moon { opacity: 1; transform: none; }
 
 .menu-toggle { display: none; }
@@ -272,7 +275,7 @@ p { margin: 0 0 1rem; }
 .btn:active { transform: translateY(0) scale(0.98); }
 .btn-primary { background: var(--accent); color: var(--accent-ink); }
 .btn-primary:hover { background: color-mix(in srgb, var(--accent) 88%, var(--ink)); }
-.btn-ghost { background: transparent; color: var(--ink); border-color: var(--rule-strong); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--edge); }
 .btn-ghost:hover { border-color: var(--ink); }
 
 /* Hero */
@@ -315,12 +318,12 @@ p { margin: 0 0 1rem; }
 
 .edge {
   fill: none;
-  stroke: var(--rule-strong);
+  stroke: var(--edge);
   stroke-width: 1.6;
   stroke-linecap: round;
 }
 .edge-in { stroke-dasharray: 2 4; }
-.arrow-head { fill: var(--rule-strong); }
+.arrow-head { fill: var(--edge); }
 
 .edge-labels text, .source-label {
   font-family: var(--font-body);
@@ -618,10 +621,10 @@ p { margin: 0 0 1rem; }
 .copy-btn {
   font: inherit;
   font-size: var(--step--1);
-  min-height: 36px;
+  min-height: 40px;
   padding: 0 14px;
   border-radius: 8px;
-  border: 1px solid var(--rule-strong);
+  border: 1px solid var(--edge);
   background: transparent;
   color: var(--ink);
   cursor: pointer;
@@ -770,3 +773,36 @@ p { margin: 0 0 1rem; }
   .project-meta { grid-template-columns: 1fr; gap: 8px; }
 }
 .when-pending { color: var(--accent); font-style: italic; }
+
+/* Diagram stagger and pulse paths (kept out of inline styles for the CSP) */
+.n0 { --i: 0; }
+.n1 { --i: 1; }
+.n2 { --i: 2; }
+.n3 { --i: 3; }
+.n4 { --i: 4; }
+.n5 { --i: 5; }
+.p0 { offset-path: path('M75 28 V44'); --d: 0s; }
+.p1 { offset-path: path('M142 70 H204'); --d: .4s; }
+.p2 { offset-path: path('M337 70 H399'); --d: 1.1s; }
+.p3 { offset-path: path('M270 98 V245'); --d: 1.6s; }
+.p4 { offset-path: path('M465 98 V245'); --d: 2.2s; }
+.p5 { offset-path: path('M410 248 C 392 196, 368 148, 332 100'); --d: 2.9s; }
+.p6 { offset-path: path('M140 252 C 172 220, 196 160, 214 100'); --d: .8s; }
+
+/* Footer link meets the 24px minimum target size */
+.footer-inner a { display: inline-flex; align-items: center; min-height: 32px; }
+.footer-inner { align-items: center; }
+
+/* Polish: wrapping, numerals, smoothing, image edges */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+h1, h2, h3, h4, .article-title, .work-title { text-wrap: balance; }
+p, li, dd, .work-desc, figcaption { text-wrap: pretty; }
+.when, time, .article-list time { font-variant-numeric: tabular-nums; }
+.portrait img { outline: 1px solid rgba(0, 0, 0, 0.1); outline-offset: -1px; }
+.is-dark .portrait img { outline-color: rgba(255, 255, 255, 0.1); }
+
+/* Short landscape screens: keep the hero from filling several screens */
+@media (max-height: 500px) and (orientation: landscape) {
+  :root { --step-3: 2.6rem; }
+  .hero { padding-top: 28px; }
+}
