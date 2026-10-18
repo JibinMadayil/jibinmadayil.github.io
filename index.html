@@ -483,109 +483,54 @@
     <section class="section cases" id="case-studies" aria-labelledby="cases-title">
       <div class="container">
         <h2 id="cases-title">Case studies</h2>
-        <p class="section-intro">Four pieces of work in more depth. Client names, account values and system details are left out.</p>
+        <p class="section-intro">Two pieces of work in more depth. Client names, account values and system details are left out.</p>
 
         <div class="case-list">
           <article class="case" aria-labelledby="case1-title">
             <p class="case-status status-done">Deployed to production</p>
-            <h3 id="case1-title">Multi-year salary and insurance planning in EPM</h3>
-            <p class="case-summary">Calculation rules that project salary, benefit and insurance expense year over year through FY2032.</p>
-            <p class="case-tech">EPM Planning, Calculation Manager, Essbase calculation functions, runtime prompts, Smart View</p>
+            <h3 id="case1-title">Segment value security on the chart of accounts</h3>
+            <p class="case-summary">Role-based access to chart of accounts values for a hospital's finance team, so each user works only with the accounts they are responsible for.</p>
+            <p class="case-tech">Oracle Fusion General Ledger, segment value security, data security policies, Financial Reporting Studio</p>
             <details class="tech">
               <summary>Read the case study</summary>
               <div class="tech-body">
                 <p class="tech-label">Business challenge</p>
-                <p>Finance needed salary, benefit and insurance expense projected at different annual rates across a multi-year horizon, by account group.</p>
+                <p>Finance users could see and post to every value in the chart of accounts. The hospital needed access limited by role without slowing down journal entry or reporting.</p>
                 <p class="tech-label">My responsibilities</p>
-                <p>Developed and modified the calculation rules, tested them and deployed them to production.</p>
+                <p>Designed and implemented segment value security as part of General Ledger production support, from access design through testing and rollout.</p>
                 <p class="tech-label">Technical approach</p>
                 <ul>
-                  <li>A 2% compounding annual increase on selected salary and benefit accounts, and 7% on selected insurance accounts.</li>
-                  <li>Extended the calculations through FY2032.</li>
-                  <li>Data copy logic using DATACOPY with runtime prompts for source and target years, scenario and version.</li>
-                  <li>Level-0 member selection to keep calculation scope tight, and fixes for scope and performance issues.</li>
-                  <li>Worked on the existing CPI-based and trend-based forecast calculations and prior-year assumptions.</li>
+                  <li>Enabled security on the value sets for the chart of accounts segments that needed restricting.</li>
+                  <li>Defined conditions and data security policies that grant each role access only to its range of segment values.</li>
+                  <li>Assigned the policies to the right job roles and users.</li>
                 </ul>
                 <p class="tech-label">Testing and validation</p>
-                <p>Checked results in planning forms and Smart View, and supported business users through Financial Planning UAT.</p>
+                <p>Tested each role in journal entry, account inquiry and Financial Reporting Studio reports to confirm users saw only their permitted values.</p>
                 <p class="tech-label">Outcome</p>
-                <p>The salary and insurance rules are in production.</p>
+                <p>Segment value security is live, and access to chart of accounts values now follows each user's role.</p>
               </div>
             </details>
           </article>
 
           <article class="case" aria-labelledby="case2-title">
-            <p class="case-status status-done">Configured and tested</p>
-            <h3 id="case2-title">General Ledger financial controls</h3>
-            <p class="case-summary">Journal approvals, account combination rules and journal entry controls for a public-sector utility.</p>
-            <p class="case-tech">Oracle Fusion General Ledger, cross-validation rules, journal approval rules, spreadsheet journals</p>
-            <details class="tech">
-              <summary>Read the case study</summary>
-              <div class="tech-body">
-                <p class="tech-label">Business challenge</p>
-                <p>Stop invalid account combinations at entry, route journals to the right approvers by amount and team, and improve the quality of journal data.</p>
-                <p class="tech-label">My responsibilities</p>
-                <p>Configured and tested the controls, and wrote the functional specifications for page changes.</p>
-                <p class="tech-label">Technical approach</p>
-                <ul>
-                  <li>Cross-validation rules across Department, Service and Natural Account segments.</li>
-                  <li>Journal approval rules with monetary thresholds, supervisory and position-based hierarchies, and separate routing for Controllership and FP&amp;A.</li>
-                  <li>Specifications for mandatory journal descriptions and for restricting AutoCopy on subledger journals.</li>
-                </ul>
-                <p class="tech-label">Testing and validation</p>
-                <p>UAT scenarios covering journal submission and approval, spreadsheet uploads, reversals, revaluation and funds checking. Some scenarios found issues that needed investigation before sign-off.</p>
-                <p class="tech-label">Current status</p>
-                <p>Approval and cross-validation rules are configured and tested. The page customizations are specified and with the client for sign-off.</p>
-              </div>
-            </details>
-          </article>
-
-          <article class="case" aria-labelledby="case3-title">
-            <p class="case-status status-done">Issues resolved</p>
-            <h3 id="case3-title">ERP to EPM integration troubleshooting</h3>
-            <p class="case-summary">Finding out why financial and budget data failed to load between Oracle Fusion ERP and EPM Planning.</p>
-            <p class="case-tech">EPM Data Integration, Data Management, Budgetary Control, Smart View</p>
-            <details class="tech">
-              <summary>Read the case study</summary>
-              <div class="tech-body">
-                <p class="tech-label">Business challenge</p>
-                <p>Budget and actuals loads were failing or arriving incomplete, and finance needed to trust the numbers in both systems.</p>
-                <p class="tech-label">My responsibilities</p>
-                <p>Investigated the failures, reviewed the mappings and worked with the technical and functional teams on fixes.</p>
-                <p class="tech-label">Technical approach</p>
-                <ul>
-                  <li>Read Data Integration job logs step by step to find whether a failure was in the extract, the mapping or the target load.</li>
-                  <li>Reviewed dimension, scenario, category and period mappings, and traced unknown members and invalid combinations back to their source.</li>
-                  <li>Investigated drill-through from reported numbers back to source financial data.</li>
-                </ul>
-                <p class="tech-label">Testing and validation</p>
-                <p>Reconciled loaded data against the source after each fix.</p>
-                <p class="tech-label">Outcome</p>
-                <p>The failures were traced to their causes and fixed with the project teams.</p>
-              </div>
-            </details>
-          </article>
-
-          <article class="case" aria-labelledby="case4-title">
             <p class="case-status status-open">Proposed design</p>
-            <h3 id="case4-title">Replacement dispatch in Oracle Field Service</h3>
+            <h3 id="case2-title">Replacement dispatch in Oracle Field Service</h3>
             <p class="case-summary">Assessing whether Oracle Field Service can dispatch replacement staff for a school district, and designing for the gaps.</p>
-            <p class="case-tech">Oracle Field Service, CX Service, Oracle Integration Cloud (proposed)</p>
+            <p class="case-tech">Oracle Field Service, Oracle Integration Cloud (proposed)</p>
             <details class="tech">
               <summary>Read the case study</summary>
               <div class="tech-body">
                 <p class="tech-label">Business challenge</p>
                 <p>Assign replacement staff for absences using qualifications, seniority, availability and preferences, with approvals before an assignment is confirmed.</p>
                 <p class="tech-label">My responsibilities</p>
-                <p>Requirements analysis, fit-gap, proof-of-concept configuration and the proposed solution design.</p>
+                <p>RFP response, requirements analysis, fit-gap, configuration of the customized Field Service application and the proposed integration design.</p>
                 <p class="tech-label">Technical approach</p>
                 <ul>
                   <li>Tested standard scheduling and routing against the district's rules to find what configuration alone could handle.</li>
                   <li>For the gaps, drafted pseudocode and an Oracle Integration Cloud design that routes requests through approval before pushing confirmed work to Field Service.</li>
-                  <li>Evaluated approval options for CX Service Requests after confirming the standard approval framework does not support that object.</li>
                 </ul>
                 <p class="tech-label">Current status</p>
-                <p>The proof of concept won sign-off to move to CRP 1. The integration design is proposed and not built.</p>
+                <p>A client demo of the configured application won sign-off to move to CRP 1. The integration design is proposed and not built.</p>
               </div>
             </details>
           </article>
