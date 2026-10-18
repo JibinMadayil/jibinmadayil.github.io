@@ -68,7 +68,7 @@
           </h1>
           <p class="hero-role">Oracle Fusion Financials and EPM consultant</p>
           <p class="hero-lede">
-            I configure General Ledger, Cash Management, Budgetary Control and EPM Planning for public-sector,
+            I configure General Ledger, Cash Management, Fixed Assets, Budgetary Control and EPM Planning for public-sector,
             healthcare and mid-market organizations, and I build the integrations that move data between ERP and EPM.
           </p>
           <p class="hero-meta">Business Technology Analyst at Novamodus Solutions, based in Mississauga, Ontario.</p>
@@ -82,7 +82,7 @@
         <figure class="flow" aria-labelledby="flow-caption">
           <svg class="flow-svg" viewBox="0 0 540 330" role="img" aria-labelledby="flow-title flow-desc">
             <title id="flow-title">How finance data moves through Oracle Fusion and EPM</title>
-            <desc id="flow-desc">Bank statements load into Cash Management, which posts to the General Ledger. General Ledger actuals load into EPM Planning and feed Financial Reporting. Approved budgets are written back from EPM Planning to Budgetary Control, which checks funds for transactions posting to the General Ledger.</desc>
+            <desc id="flow-desc">Bank statements load into Cash Management, which posts to the General Ledger. Fixed Assets sends asset and depreciation journals to the General Ledger. General Ledger actuals load into EPM Planning and feed Financial Reporting. Approved budgets are written back from EPM Planning to Budgetary Control, which checks funds for transactions posting to the General Ledger.</desc>
             <defs>
               <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0 0 L10 5 L0 10 z" class="arrow-head"/>
@@ -95,6 +95,7 @@
               <path class="edge" d="M270 98 V243" marker-end="url(#arrow)"/>
               <path class="edge" d="M465 98 V243" marker-end="url(#arrow)"/>
               <path class="edge" d="M410 248 C 392 196, 368 148, 332 100" marker-end="url(#arrow)"/>
+              <path class="edge" d="M140 252 C 172 220, 196 160, 214 100" marker-end="url(#arrow)"/>
             </g>
 
             <g class="edge-labels">
@@ -104,6 +105,7 @@
               <text x="455" y="176" text-anchor="end">writeback</text>
               <text x="352" y="210" text-anchor="end">funds</text>
               <text x="352" y="226" text-anchor="end">check</text>
+              <text x="196" y="206" text-anchor="start" class="label-fa">journals</text>
             </g>
 
             <g class="nodes">
@@ -111,6 +113,7 @@
               <g class="node node-core" style="--i:1"><rect x="205" y="44" width="130" height="52" rx="10"/><text class="t-one" x="270" y="75">General Ledger</text><text class="t-two" x="270" y="63">General</text><text class="t-two" x="270" y="86">Ledger</text></g>
               <g class="node" style="--i:2"><rect x="400" y="44" width="130" height="52" rx="10"/><text class="t-one" x="465" y="75">EPM Planning</text><text class="t-two" x="465" y="63">EPM</text><text class="t-two" x="465" y="86">Planning</text></g>
               <g class="node" style="--i:3"><rect x="205" y="246" width="130" height="52" rx="10"/><text class="t-one" x="270" y="277">Financial Reporting</text><text class="t-two" x="270" y="265">Financial</text><text class="t-two" x="270" y="288">Reporting</text></g>
+              <g class="node" style="--i:5"><rect x="10" y="246" width="130" height="52" rx="10"/><text class="t-one" x="75" y="277">Fixed Assets</text><text class="t-two" x="75" y="265">Fixed</text><text class="t-two" x="75" y="288">Assets</text></g>
               <g class="node" style="--i:4"><rect x="400" y="246" width="130" height="52" rx="10"/><text class="t-one" x="465" y="277">Budgetary Control</text><text class="t-two" x="465" y="265">Budgetary</text><text class="t-two" x="465" y="288">Control</text></g>
               <text class="source-label" x="12" y="22">bank statements (BAI2)</text>
               <path class="edge edge-in" d="M75 30 V42" />
@@ -123,6 +126,7 @@
               <circle r="4" class="pulse" style="offset-path: path('M270 98 V245'); --d:1.6s"/>
               <circle r="4" class="pulse" style="offset-path: path('M465 98 V245'); --d:2.2s"/>
               <circle r="4" class="pulse" style="offset-path: path('M410 248 C 392 196, 368 148, 332 100'); --d:2.9s"/>
+              <circle r="4" class="pulse" style="offset-path: path('M140 252 C 172 220, 196 160, 214 100'); --d:.8s"/>
             </g>
           </svg>
           <figcaption id="flow-caption">How finance data moves through the Oracle Fusion and EPM setups I configure.</figcaption>
@@ -161,60 +165,75 @@
     <section class="section experience" id="experience" aria-labelledby="experience-title">
       <div class="container">
         <h2 id="experience-title">Experience</h2>
-        <p class="section-intro">I lead workstreams on three client implementations at Novamodus.</p>
 
         <div class="employer">
-          <div>
+          <div class="employer-main">
             <h3>Novamodus Solutions Inc.</h3>
             <p class="employer-role">Business Technology Analyst</p>
           </div>
-          <p class="when"><time datetime="2025-08">Aug 2025</time> to present</p>
+          <p class="when"><time datetime="2025-08">Aug 2025</time> to present<br><span>Mississauga, Ontario</span></p>
+          <p class="employer-summary">Oracle Cloud consulting. I lead functional workstreams on Oracle Fusion Financials, Oracle EPM and Oracle Field Service projects for public-sector and healthcare clients, from solution design and configuration through support after go-live.</p>
         </div>
 
         <ol class="timeline">
-          <li class="entry">
+          <li class="entry project">
             <div class="entry-head">
-              <h4>Finance Lead, Ontario hospital</h4>
+              <h4>Ontario hospital</h4>
               <p class="when"><time datetime="2026-08">Aug 2026</time> to present</p>
             </div>
+            <dl class="project-meta">
+              <div><dt>Role</dt><dd>Finance Lead</dd></div>
+              <div><dt>Modules</dt><dd>Cash Management, General Ledger, Financial Reporting Studio</dd></div>
+              <div><dt>Scope</dt><dd>Implementation and support</dd></div>
+            </dl>
             <ul>
-              <li>Configuring Cash Management: parse rules for BAI2 bank statements, transaction creation rules and reconciliation matching.</li>
-              <li>Implemented segment value security and built Financial Reporting Studio reports.</li>
-              <li>Resolve General Ledger support requests for the finance team.</li>
-              <li>Saw that the hospital needed Oracle EPM, pitched it, and won the EPM project for Novamodus.</li>
+              <li>Configured Cash Management for the hospital's bank feed: BAI2 parse rules, transaction creation rules and reconciliation matching rules.</li>
+              <li>Implemented segment value security and built Financial Reporting Studio reports for the finance team.</li>
+              <li>Resolved General Ledger support requests for the finance team.</li>
+              <li>Identified the hospital's need for Oracle EPM, pitched it and won the EPM project for Novamodus.</li>
             </ul>
-            <p class="tags">Cash Management, General Ledger, Financial Reporting Studio</p>
           </li>
-          <li class="entry">
+
+          <li class="entry project">
             <div class="entry-head">
-              <h4>Field Service Lead, BC school district</h4>
+              <h4>BC school district</h4>
               <p class="when"><time datetime="2026-06">Jun 2026</time> to present</p>
             </div>
+            <dl class="project-meta">
+              <div><dt>Role</dt><dd>Field Service Lead</dd></div>
+              <div><dt>Modules</dt><dd>Oracle Field Service, CX Service, Oracle Integration Cloud</dd></div>
+              <div><dt>Scope</dt><dd>Prototype and solution design</dd></div>
+            </dl>
             <ul>
               <li>Built the Oracle Field Service prototype: resource types, work shifts, work zones, work skills, activity types and routing.</li>
               <li>Designed the approval flow for absence replacement requests across Field Service, CX Service and Oracle Integration Cloud.</li>
-              <li>Wrote solution design sections on dispatch, multi-assignment staff and the HCM to Field Service integration.</li>
-              <li>Worked with Oracle Support to fix the HCM to Field Service resource sync.</li>
+              <li>Wrote solution design document sections on dispatch, multi-assignment staff and the HCM to Field Service integration.</li>
+              <li>Worked with Oracle Support to resolve the HCM to Field Service resource sync.</li>
             </ul>
-            <p class="tags">Oracle Field Service, Oracle Integration Cloud</p>
           </li>
-          <li class="entry">
+
+          <li class="entry project">
             <div class="entry-head">
-              <h4>ERP and EPM Lead, Ontario public-sector agency</h4>
+              <h4>Ontario public-sector agency</h4>
               <p class="when"><time datetime="2026-01">Jan 2026</time> to present</p>
             </div>
+            <dl class="project-meta">
+              <div><dt>Role</dt><dd>ERP and EPM Lead</dd></div>
+              <div><dt>Modules</dt><dd>EPM Planning, Budgetary Control, General Ledger, Data Management</dd></div>
+              <div><dt>Scope</dt><dd>Implementation</dd></div>
+            </dl>
             <ul>
               <li>Configured EPM Planning for Financials and Projects, including the data maps between the two.</li>
               <li>Built the budget writeback from EPM Planning to ERP Budgetary Control through Data Management.</li>
               <li>Set up General Ledger journal approval rules, cross-validation rules, and revaluation and reversal criteria.</li>
-              <li>Wrote the General Ledger user guide for the finance team, covering spreadsheet journals and Financial Reporting Studio.</li>
+              <li>Wrote the General Ledger user guide covering spreadsheet journals and Financial Reporting Studio.</li>
               <li>Building an EPM expense forecast form to replace the finance team's Excel template.</li>
             </ul>
-            <p class="tags">EPM Planning, Budgetary Control, Data Management, General Ledger</p>
           </li>
-          <li class="entry">
+
+          <li class="entry project">
             <div class="entry-head">
-              <h4>Across Novamodus</h4>
+              <h4>Firm-wide</h4>
               <p class="when"><time datetime="2025-08">Aug 2025</time> to present</p>
             </div>
             <ul>
@@ -223,21 +242,19 @@
               <li>Built an Excel and VBA hiring tracker that automated candidate routing, interview emails, scheduling, rescheduling and IT notifications across six departments, so hiring steps that had been handled by hand now run from one workbook.</li>
             </ul>
           </li>
-          <li class="entry entry-edu">
-            <div class="entry-head">
-              <h4>Postgraduate Diploma, Big Data Analytics</h4>
-              <p class="when"><time datetime="2024-04">Apr 2024</time></p>
-            </div>
-            <p>Lambton College, Mississauga</p>
-          </li>
-          <li class="entry entry-edu">
-            <div class="entry-head">
-              <h4>Bachelor's, Mathematics, Statistics and Computer Science</h4>
-              <p class="when"><time datetime="2021-08">Aug 2021</time></p>
-            </div>
-            <p>Osmania University, India</p>
-          </li>
         </ol>
+
+        <h3 class="sub-title">Education</h3>
+        <dl class="education">
+          <div>
+            <dt>Postgraduate Diploma, Big Data Analytics</dt>
+            <dd>Lambton College, Mississauga <span class="when"><time datetime="2024-04">Apr 2024</time></span></dd>
+          </div>
+          <div>
+            <dt>Bachelor's, Mathematics, Statistics and Computer Science</dt>
+            <dd>Osmania University, India <span class="when"><time datetime="2021-08">Aug 2021</time></span></dd>
+          </div>
+        </dl>
       </div>
     </section>
 

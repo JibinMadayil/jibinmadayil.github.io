@@ -727,3 +727,45 @@ p { margin: 0 0 1rem; }
   .edge-labels text, .source-label { font-size: 14.5px; }
   .flow figcaption { margin-top: 16px; }
 }
+
+/* Experience: consultant project blocks */
+.employer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 24px;
+  padding: 24px 0;
+  margin: 1.5rem 0 2rem;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+.employer .when { text-align: right; line-height: 1.5; }
+.employer .when span { font-size: var(--step--1); }
+.employer-summary { grid-column: 1 / -1; color: var(--ink-soft); max-width: 46em; margin: 8px 0 0; }
+
+.project .entry-head h4 { font-size: var(--step-1); }
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, auto));
+  justify-content: start;
+  gap: 6px 32px;
+  margin: 0 0 14px;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  max-width: 52em;
+}
+.project-meta div { min-width: 0; }
+.project-meta dt { font-size: var(--step--1); color: var(--ink-soft); }
+.project-meta dd { margin: 0; font-weight: 500; }
+
+.sub-title { margin: 3rem 0 0.75rem; }
+.education { margin: 0; border-top: 1px solid var(--rule); max-width: 52em; }
+.education div { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.education dt { font-weight: 600; }
+.education dd { margin: 2px 0 0; color: var(--ink-soft); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+@media (max-width: 720px) {
+  .employer { grid-template-columns: 1fr; }
+  .employer .when { text-align: left; }
+  .project-meta { grid-template-columns: 1fr; gap: 8px; }
+}
