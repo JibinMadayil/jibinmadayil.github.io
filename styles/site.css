@@ -769,3 +769,4 @@ p { margin: 0 0 1rem; }
   .employer .when { text-align: left; }
   .project-meta { grid-template-columns: 1fr; gap: 8px; }
 }
+.when-pending { color: var(--accent); font-style: italic; }
