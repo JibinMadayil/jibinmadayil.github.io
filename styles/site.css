@@ -866,6 +866,12 @@ p, li, dd, .work-desc, figcaption { text-wrap: pretty; }
 @media (max-width: 420px) { .fx-tiles { gap: 10px; } .fx-tile { border-radius: 14px; font-size: 0.85rem; gap: 8px; } .fx-icon { width: 44px; height: 44px; } .fx-infolet-value { font-size: 2rem; } }
 @media (prefers-reduced-motion: reduce) { .js .fx-tiles li { opacity: 1; transform: none; } }
 /* Portfolio v2: lifecycle, technical details, case studies, certifications, articles */
+.phase-list { margin: 14px 0 0; padding: 0; max-width: 52em; }
+.phase-list > div { display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: 4px 18px; padding: 10px 0; border-top: 1px solid var(--rule); }
+.phase-list > div:first-child { border-top: 0; padding-top: 0; }
+.phase-list dt { font-weight: 600; font-size: 0.92rem; color: var(--accent); line-height: 1.45; }
+.phase-list dd { margin: 0; line-height: 1.55; text-wrap: pretty; }
+@media (max-width: 760px) { .phase-list > div { grid-template-columns: 1fr; } }
 .lifecycle-title { margin-top: 0; }
 .lifecycle-lede { margin: 0 0 1.25rem; color: var(--ink-soft); max-width: 62ch; }
 .lifecycle {
